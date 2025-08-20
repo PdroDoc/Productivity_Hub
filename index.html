@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Produtividade - Pedro | Be Aware Don't Slip</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .site-nav {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .nav-logo {
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        .nav-link:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .motto {
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+        
+        .nav-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        .calendar-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .month-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .month-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .month-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .month-stats {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .recent-reports {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .report-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .report-item:hover {
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .report-item:last-child {
+            border-bottom: none;
+        }
+        
+        .report-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .report-date {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .report-title {
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+        
+        .report-stats {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .motivation-footer {
+            text-align: center;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        
+        .miau-tribute {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .calendar-nav {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="https://pedrop.vercel.app" class="nav-logo">Pythonic Lawyer</a>
+            <div class="nav-links">
+                <a href="link1.html" class="nav-link">Produtividade</a>
+                <a href="https://taote.vercel.app" class="nav-link">My Way</a>
+                <a href="https://pedrop.vercel.app/projects" class="nav-link">Projetos</a>
+                <a href="link4.html" class="nav-link">Blog</a>
+                <a href="https://github.com/pdrodoc" class="nav-link">Github</a>
+                <a href="link6.html" class="nav-link">Cursos</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>⚙️ Hub de Produtividade</h1>
+            <div class="motto">BE AWARE DON'T SLIP</div>
+            <div class="subtitle">Advogado Programador | Mindful Coding | Unicórnio em Ação</div>
+        </div>
+        
+        <div class="nav-section">
+            <h2 class="section-title">📅 Navegação por Período</h2>
+            <div class="calendar-nav">
+                <div class="month-card" onclick="showPeriod('daily')">
+                    <div class="month-title">📊 Relatórios Diários</div>
+                    <div class="month-stats" id="dailyStats">Últimos 30 dias</div>
+                </div>
+                <div class="month-card" onclick="showPeriod('weekly')">
+                    <div class="month-title">📈 Relatórios Semanais</div>
+                    <div class="month-stats" id="weeklyStats">Últimas 12 semanas</div>
+                </div>
+                <div class="month-card" onclick="showPeriod('monthly')">
+                    <div class="month-title">🎯 Visão Mensal</div>
+                    <div class="month-stats" id="monthlyStats">Panorama completo</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-section">
+            <h2 class="section-title">📋 Relatórios Recentes</h2>
+            <div class="recent-reports" id="recentReports">
+                <!-- Dinamicamente preenchido -->
+            </div>
+        </div>
+        
+        <div class="motivation-footer">
+            <h2>🥷🏼 CADA LINHA COM PRESENÇA</h2>
+            <p style="font-size: 1.3em; margin-top: 15px;">
+                "Advogado que programa é unicórnio no mercado!"<br>
+                <strong>Código limpo, mente clara!</strong>
+            </p>
+            <div class="miau-tribute">
+                <p>💫 "Be aware, don't slip" - Pelo Miau. </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        
+        // Dados atualizados automaticamente - 19/08/2025 22:47
+        const reportData = {
+            daily: [
+        {
+                "filename": "relatorio-diario-2025-08-19.html",
+                "date_str": "2025-08-19",
+                "formatted_date": "19/08/2025",
+                "file_size": 9976,
+                "modified": "2025-08-19 22:47:18.707781",
+                "stats": {
+                        "total_hours": 3.5,
+                        "sessions": 6
+                },
+                "type": "daily"
+        },
+        {
+                "filename": "relatorio-diario-2025-08-18.html",
+                "date_str": "2025-08-18",
+                "formatted_date": "18/08/2025",
+                "file_size": 9490,
+                "modified": "2025-08-19 22:32:57.025746",
+                "stats": {
+                        "total_hours": 3.3,
+                        "sessions": 4
+                },
+                "type": "daily"
+        }
+],
+            weekly: [],
+            monthly: [],
+            recent: [
+        {
+                "filename": "relatorio-diario-2025-08-19.html",
+                "date_str": "2025-08-19",
+                "formatted_date": "19/08/2025",
+                "file_size": 9976,
+                "modified": "2025-08-19 22:47:18.707781",
+                "stats": {
+                        "total_hours": 3.5,
+                        "sessions": 6
+                },
+                "type": "daily"
+        },
+        {
+                "filename": "relatorio-diario-2025-08-18.html",
+                "date_str": "2025-08-18",
+                "formatted_date": "18/08/2025",
+                "file_size": 9490,
+                "modified": "2025-08-19 22:32:57.025746",
+                "stats": {
+                        "total_hours": 3.3,
+                        "sessions": 4
+                },
+                "type": "daily"
+        }
+]
+        };
+        
+        // Atualizar estatísticas nos cards
+        function updateStats() {
+            document.getElementById('dailyStats').textContent = `2 relatórios encontrados`;
+            document.getElementById('weeklyStats').textContent = `0 relatórios encontrados`;
+            document.getElementById('monthlyStats').textContent = `0 relatórios encontrados`;
+        }
+        
+        // Função para descobrir relatórios automaticamente
+        async function discoverReports() {
+            const reportContainer = document.getElementById('recentReports');
+            let html = '';
+            
+            if (reportData.recent.length === 0) {
+                html = '<div class="no-data">📝 Nenhum relatório encontrado ainda.<br>Que tal começar a programar com presença?</div>';
+            } else {
+                for (let report of reportData.recent) {
+                    const typeLabel = report.type === 'daily' ? '📊 Diário' : 
+                                    report.type === 'weekly' ? '📈 Semanal' : 
+                                    '🎯 Mensal';
+                                    
+                    const statsText = report.stats && report.stats.total_hours ? 
+                        `⏱️ ${report.stats.total_hours}h` : 
+                        '📊 Ver detalhes';
+                    
+                    html += `
+                        <div class="report-item" onclick="openReport('${report.filename}')">
+                            <div class="report-info">
+                                <div class="report-date">${typeLabel}</div>
+                                <div class="report-title">${report.formatted_date}</div>
+                            </div>
+                            <div class="report-stats">
+                                ${statsText} →
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+            
+            reportContainer.innerHTML = html;
+        }
+        
+        function openReport(filename) {
+            window.open(filename, '_blank');
+        }
+        
+        function showPeriod(period) {
+            const reports = reportData[period];
+            if (reports.length > 0) {
+                console.log(`📊 Mostrando ${reports.length} relatórios de ${period}`);
+                // Implementar modal ou página filtrada futuramente
+                alert(`${reports.length} relatórios ${period} encontrados!\nImplementar navegação detalhada em breve.`);
+            } else {
+                alert(`Nenhum relatório ${period} encontrado ainda.\nContinue programando com presença!`);
+            }
+        }
+        
+        // Inicializar na carga da página
+        document.addEventListener('DOMContentLoaded', function() {
+            updateStats();
+            discoverReports();
+        });
+        
+        // Atualizar lista a cada 30 segundos (caso novos relatórios sejam gerados)
+        setInterval(function() {
+            // Em produção, você pode implementar verificação de novos arquivos
+            console.log('🔄 Verificando novos relatórios...');
+        }, 30000);
+        
+    </script>
+</body>
+</html>
