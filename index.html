@@ -302,9 +302,21 @@
     
     <script>
         
-        // Dados atualizados automaticamente - 05/09/2025 23:17
+        // Dados atualizados automaticamente - 14/09/2025 00:20
         const reportData = {
             daily: [
+        {
+                "filename": "relatorio-diario-2025-09-13.html",
+                "date_str": "2025-09-13",
+                "formatted_date": "13/09/2025",
+                "file_size": 7536,
+                "modified": "2025-09-14 00:18:05.096603",
+                "stats": {
+                        "total_hours": 4.6,
+                        "sessions": 6
+                },
+                "type": "daily"
+        },
         {
                 "filename": "relatorio-diario-2025-09-05.html",
                 "date_str": "2025-09-05",
@@ -431,6 +443,18 @@
             monthly: [],
             recent: [
         {
+                "filename": "relatorio-diario-2025-09-13.html",
+                "date_str": "2025-09-13",
+                "formatted_date": "13/09/2025",
+                "file_size": 7536,
+                "modified": "2025-09-14 00:18:05.096603",
+                "stats": {
+                        "total_hours": 4.6,
+                        "sessions": 6
+                },
+                "type": "daily"
+        },
+        {
                 "filename": "relatorio-diario-2025-09-05.html",
                 "date_str": "2025-09-05",
                 "formatted_date": "05/09/2025",
@@ -555,7 +579,7 @@
         
         // Atualizar estatísticas nos cards
         function updateStats() {
-            document.getElementById('dailyStats').textContent = `9 relatórios encontrados`;
+            document.getElementById('dailyStats').textContent = `10 relatórios encontrados`;
             document.getElementById('weeklyStats').textContent = `1 relatórios encontrados`;
             document.getElementById('monthlyStats').textContent = `0 relatórios encontrados`;
         }
