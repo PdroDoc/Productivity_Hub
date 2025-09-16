@@ -302,9 +302,21 @@
     
     <script>
         
-        // Dados atualizados automaticamente - 14/09/2025 00:38
+        // Dados atualizados automaticamente - 15/09/2025 23:19
         const reportData = {
             daily: [
+        {
+                "filename": "relatorio-diario-2025-09-14.html",
+                "date_str": "2025-09-14",
+                "formatted_date": "14/09/2025",
+                "file_size": 9521,
+                "modified": "2025-09-15 23:19:10.934396",
+                "stats": {
+                        "total_hours": 5.3,
+                        "sessions": 7
+                },
+                "type": "daily"
+        },
         {
                 "filename": "relatorio-diario-2025-09-10.html",
                 "date_str": "2025-09-10",
@@ -422,8 +434,7 @@
                 "stats": {
                         "total_hours": 5.4,
                         "sessions": 5
-                },
-                "type": "daily"
+                }
         },
         {
                 "filename": "relatorio-diario-2025-08-21.html",
@@ -488,6 +499,18 @@
             monthly: [],
             recent: [
         {
+                "filename": "relatorio-diario-2025-09-14.html",
+                "date_str": "2025-09-14",
+                "formatted_date": "14/09/2025",
+                "file_size": 9521,
+                "modified": "2025-09-15 23:19:10.934396",
+                "stats": {
+                        "total_hours": 5.3,
+                        "sessions": 7
+                },
+                "type": "daily"
+        },
+        {
                 "filename": "semanal-2025-W35.html",
                 "date_str": "2025-W35",
                 "formatted_date": "Semana 35/2025",
@@ -618,25 +641,13 @@
                         "sessions": 10
                 },
                 "type": "daily"
-        },
-        {
-                "filename": "relatorio-diario-2025-08-22.html",
-                "date_str": "2025-08-22",
-                "formatted_date": "22/08/2025",
-                "file_size": 9959,
-                "modified": "2025-08-22 22:02:34.297383",
-                "stats": {
-                        "total_hours": 5.4,
-                        "sessions": 5
-                },
-                "type": "daily"
         }
 ]
         };
         
         // Atualizar estatísticas nos cards
         function updateStats() {
-            document.getElementById('dailyStats').textContent = `13 relatórios encontrados`;
+            document.getElementById('dailyStats').textContent = `14 relatórios encontrados`;
             document.getElementById('weeklyStats').textContent = `2 relatórios encontrados`;
             document.getElementById('monthlyStats').textContent = `0 relatórios encontrados`;
         }
