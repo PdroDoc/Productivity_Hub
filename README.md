@@ -10,6 +10,6 @@
 ## 💡 Tech Stack
 - Python para coleta/processamento
 - HTML/CSS/JS para visualização
-- GitHub Pages para hospedagem
+- GitHub Pages para hospedagem.
 
 [🔗 Ver Hub Ao Vivo]
